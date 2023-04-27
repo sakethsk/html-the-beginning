@@ -1,0 +1,119 @@
+body{
+    border-color: black;
+    border-style: solid;
+    border-width: 5px;
+    font-family: sans-serif;
+    width: 500px;
+    margin: 75px auto;
+    
+    
+}
+
+h2{
+    text-align: center;
+    text-transform: uppercase;
+    font-stretch: condensed;
+    font-weight: bold;
+    background-color: skyblue;
+    padding: 15px;
+    margin-top: auto;
+    margin-bottom: auto;
+    position: relative;
+}
+
+h2::before{
+    content: "SALE";
+    background-color: red;
+    font-size: 15px;
+    color: black;
+    font-weight: bold;
+    position: absolute;
+    top:-15px;
+    left: -15px;
+    display: inline-block;
+    padding: 5px 10px;
+    font-style: italic;
+    letter-spacing: 4px;
+}
+
+button{
+    background-color: black;
+    color: rgb(252, 252, 252);
+    text-transform: uppercase;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    width: 100%;
+}
+button:hover{
+    color: black;
+    background-color: white;
+    border: none;
+    font-size: 20px;
+    border: 5px;
+    border-color: black;
+}
+
+a:link, a:visited{
+    color: rgb(0, 0, 0);
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+a:hover, a:active{
+    background-color: black;
+    color: white;
+    text-decoration: none;
+}
+
+
+.ship{
+    font-size: 10px;
+    text-transform: uppercase;
+    background-color: azure;
+    color: lightslategray;
+    margin-top: -15px;
+}
+
+.price{
+    font-size: 20px;
+    font-weight: 5px;
+    margin-top: auto ;
+}
+
+.list{
+    list-style: square;
+    margin-bottom: 5px;
+    margin-left: -20px;
+    
+}
+
+.line{
+    margin-bottom: 5px;
+}
+
+.color{
+    background-color: black;
+    height: 15px;
+    width: 15px;
+    display: inline-block;
+    margin-right: 10px;
+}
+.color-black{
+    background-color: black;
+}
+.color-blue{
+    background-color: blue;
+}
+.color-red{
+    background-color: red;
+}
+.color-yellow{
+    background-color: yellow;
+}
+.color-green{
+    background-color: green;
+}
+.color-brown{
+    background-color: brown;
+}
