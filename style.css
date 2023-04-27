@@ -3,6 +3,7 @@
     /* border-top: 5px double black; */
     margin: 0;
     padding: 0;
+    box-sizing: border-box; /*this one is very useful to arrange the elements properly*/
 }
 /*putting margin and padding to 0 in universal selector is called global reset*/ 
 /* when you need some space inside of an element, which is very useful mostly when theres a backgroud color, we use padding */
@@ -17,9 +18,11 @@ li{
     font-family: Arial, Helvetica, sans-serif;
     /* border-top: 5px solid black; */
     /* border-bottom: 5px solid black; */
+    margin-bottom: 40px;
 }
 aside h4{
     text-align: center;
+    font-size: 25px;
 }
 
 body{
@@ -31,28 +34,30 @@ body{
 
 /* demo of padding and box models etc */
 .container{
-    width: 800px;
+    width: auto;
     /* margin-left: auto;
     margin-right: auto; */
-    margin: 0 auto;
+    margin: auto 20px;
     position: relative;
+
     /* position:relative is used to fix a specific container in its own place and move relative to the element that is set in position:absolute */
 }
 .main-header{
-    background-color: cyan;
+    background-color: silver;
     /*padding: 20px;
     padding-left: 40px;
     padding-right: 40px;*/
-    padding: 20px 40px;/* this means, top&bottom has 20px padding and left&right has 40px padding same result as the comments above*/
-    margin-bottom: 60px;
+    padding: 20px 20px;/* this means, top&bottom has 20px padding and left&right has 40px padding same result as the comments above*/
+    /* margin-bottom: 20px; */
     
     /* height: 80px;   real height of this element isn't 80 as we specified, but the extra padding height as well so it's 120 */
 }
 nav{
-    font-size: 15px;
+    font-size: 20px;
 }
 article{
-    margin-bottom: 60px;
+    /* margin-bottom: 60px; */
+    ;
 }
 .post-header{
     margin-bottom: 40px;
@@ -60,17 +65,15 @@ article{
 aside{
     background-color: aqua;
     border-top: 5px solid crimson;
-    border-bottom: 5px double crimson;
-    padding: 50px 0;
-
-    width: 500px;
+    border-bottom: 5px solid crimson;
+    /* padding: 50px 40px; */
+    width: 300px;
     
 }
 
 h1{
     color: rgb(6, 24, 142);
-    font-size: 30px;
-    
+    font-size: 25px;
     text-transform: uppercase;
     font-style: italic;
     font-stretch: expanded;
@@ -101,8 +104,10 @@ p{
 
 ul,
 ol{
-    margin-left: 50px;
+    margin-left: 20px;
+    margin-right: 20px;
     margin-bottom: 30px;
+    display: block;
 }
 
 li{
@@ -114,7 +119,7 @@ li:last-child{
 }
 
 footer p{
-    font-size: 10px;
+    font-size: 15px;
 }
 
 /*article header p{
@@ -137,6 +142,7 @@ footer p{
 
 .related{
     list-style: none;
+    margin-left: 0;
 }
 /* when we want to style multiple unique elements, use classes  */
 /* in the real world, always use "class" instead of "id" as it's just more work with "id" */
@@ -144,7 +150,7 @@ footer p{
 
 /* borders can be- dotted or wavy or dashed or double or many more */
 body{
-    background-color: silver;
+    background-color: white;
     position: relative;
 }
 
@@ -201,8 +207,8 @@ nav a:link{
     we can make block level elements to inline elements using "display:inline" 
     an "display: inline-block" acts as an inline element that has its own space like a block element*/
 
-    margin-right: 30px;
-    margin-top: 10px;
+    margin-right: 15px;
+    /* margin-top: 10px; */
     display: inline-block;
 }
 /* when an element gets styled in multiple ways,i.e, id or class or element selector(p,div,li,etc.) the priority is given as
@@ -220,7 +226,7 @@ nav a:link{
     /* the aspect ratio fixed in css overrides the ratio specified in html. "auto" can be used for dimensions already specified in html*/
 }
 
-/* priority choosing demonstration(!important has highest priority) */
+/* priority choosing demonstration(!important has highest priority) 
 #copyright{
     font-size: 12px;
     color: yellowgreen;
@@ -236,7 +242,7 @@ nav a:link{
 
 footer p{
     color: blue !important;
-}
+}*/
 
 .likebtn{
     font-size: 20px;
@@ -274,6 +280,130 @@ h2::after{
     padding: 5px 10px;
     position: absolute;
     top: -10px;
-    right: 100px;
+    right: 0;
+}
 
+/* Float Layout demo */
+/* .author-img{
+    float: left;
+    margin-bottom: 20px;
+}
+.author{
+    float: left;
+    margin-top: 15px;
+    margin-left: 15px;
+}
+h1{
+    float: left;
+}
+nav{
+    float: right; 
+    /* height collapsed in the webpage as both the elements of the background(h1&nav) are both floated */
+
+/*} 
+/* .clear{
+    clear: both;
+} */
+/* clear fix hack demo(to avoid adding empty div tags */
+/*.clearfix::after{
+    clear: both;
+    content: '';
+    display: block;
+}
+article{
+    /* background-color: green; */
+    /* width: 825px;
+    float: left;
+} */
+/*aside{
+    /* background-color: red; */
+    /*width: 300px;
+    float: right;
+}*/
+/*footer{
+    /* background-color: yellow; */
+    /*content: '';
+    clear: both; 
+} */
+/* float is tough to use hence, css creators came up with the flexbox and CSS grid*/
+.main-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.author-box{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+.author{
+    margin-bottom: 0;
+    margin-left: 20px;
+}
+.related-post{
+    /* display: flex; */
+    /* align-items: center; */
+    margin-bottom: 30px;
+    display: grid;
+}
+.related-link:link{
+    font-size: 17px;
+    font-weight: bold; 
+    font-style: normal;
+    margin-bottom: 5px;
+    /* display: flex;
+    align-items: center;
+    flex-direction: column; */
+}
+.related-author{
+    margin-bottom: 0;
+    font-size: 14px;
+    font-weight: normal;
+    font-style: italic;
+}
+/* FLEXBOX LAYOUT
+.row{
+    display: flex;
+    align-items: flex-start;
+    gap: 75px;
+    margin-bottom: 20px;
+}
+aside{
+     flex-basis: 300px;
+     flex: 1 0 250px; 
+}
+article{
+    flex: 0 0 850px;
+    margin-left: 40px;
+}
+.related-post-li{
+    display: flex;
+    margin-bottom: 30px;
+} */
+
+/* CSS GRID LAYOUT */
+.container{
+    display: grid;
+    grid-template-columns: 1fr 300px;
+    column-gap: 40px;
+    row-gap: 60px;
+    align-items: first baseline;
+}
+.main-header{
+    grid-column: 1/span 2;
+}
+article{
+
+}
+aside{
+    display: grid;
+}
+footer{
+    background-color: #1098ad;
+    grid-column: 1/-1;
+}
+.related-post-li{
+    display: grid;
+    justify-self: start;
+    grid-template-columns: 1fr 1fr;
 }
